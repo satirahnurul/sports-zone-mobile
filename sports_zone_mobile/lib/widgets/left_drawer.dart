@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:sports_zone_mobile/menu.dart';
+import 'package:sports_zone_mobile/screens/menu.dart';
 // TODO: Impor halaman NewsFormPage jika sudah dibuat
-import 'package:sports_zone_mobile/newslist_form.dart';
+import 'package:sports_zone_mobile/screens/newslist_form.dart';
+import 'package:sports_zone_mobile/screens/products_entry_list.dart';
 
 class LeftDrawer extends StatelessWidget {
   const LeftDrawer({super.key});
@@ -66,6 +67,17 @@ class LeftDrawer extends StatelessWidget {
                     builder: (context) => NewsFormPage(),
                   ));
             },
+          ),
+          ListTile(
+              leading: const Icon(Icons.add_reaction_rounded),
+              title: const Text('Products List'),
+              onTap: () {
+                  // Route to news list page
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const ProductsEntryListPage()),
+                  );
+              },
           ),
         ],
       ),
